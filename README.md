@@ -58,35 +58,80 @@ Look at the examples I made, I left an intentional error in one, try fix it and 
 For testing conventions, it's best you use the describe built-in function to name out the file you're testing. To then make a standard structure, you make a further describes into sub-modular details like functions, classes etc. Classes should always be laid out in a higher order. so...
 
 desribe('store', () => {
+
     const item1 = {
+
         name: 'apple',
+
         category:'food',
+
         price: 0.5,
+
         description: 'LOL I\'m an apple',
+
     };
+
     const item1 = {
+
         name: 'pen',
+
         category:'stationary',
+
         price: 1,
+
         description: 'I is pen',
+
     };
+
     // array is usuall O(n), object is 0(1)
+
     // store in this scenario is an array, accommodte time-complexity for search, deletion insertion etc. Show your knowledge!
+
     const store = [item1, item2];
+
     describe('get', () => {
+
         const query = '/get'
-        it('Should return items of the category stationary')
+
+        it('Should return items of the category stationary', () => {
+
             const localStore = [...store]   // unpackks array so that references are not the same, very useful not mutating base array
+
             const category = 'stationary';
+
             const result = ... // Evaluate result through a mocked api function call
+
             expect(result).toEqual(...) //equal some output
-    });
-    describe('update', () => {
-        it('Should update the items in the store', () => {
-            cosnt localStore = [...store] // you'll be mutating the store, make a copy, don't reconstruct your store, make copy!
-            const result = ... // mutate the store, data wise, remove from array, 
+
         });
+
     });
+        it('Should return items of the category food', () => {
+
+            const localStore = [...store]   // unpackks array so that references are not the same, very useful not mutating base array
+
+            const category = 'food';
+
+            const result = ... // Evaluate result through a mocked api function call
+
+            expect(result).toEqual(...) //equal some output
+
+        });
+
+    });
+
+    describe('update', () => {
+
+        it('Should update the items in the store', () => {
+
+            const localStore = [...store] // you'll be mutating the store, make a copy, don't reconstruct your store, make copy!
+
+            const result = ... // mutate the store, data wise, remove from array, 
+
+        });
+
+    });
+
 });
 
 familiarise yourself with the general testing structure of jest if you want to use my JS approach
