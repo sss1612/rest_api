@@ -3,6 +3,19 @@ const baseUrl = 'http://localhost';
 const shit = () => {
     console.log('LOL')
 }
+const exampleGet = () => {
+    const url = `${baseUrl}:12000/url`;
+    // get request has no body, only post sends information
+    const params = {
+        headers: {'Content-Type': 'application/json'},
+        method: 'GET'
+    };
+    fetch(url, params).then((response) => {
+        response.json().then((data) => {
+            console.log(data);
+        });
+    });
+}
 const examplePost = () => {
     const url = `${baseUrl}:12000/example`;
     const data = {no: 'you'};
@@ -17,8 +30,8 @@ const examplePost = () => {
         });
     });
 }
-const exampleGet = () => {
-    const url = `${baseUrl}:12000/url`;
+const GETPYTHON = () => {
+    const url = `${baseUrl}:4040`;
     // get request has no body, only post sends information
     const params = {
         headers: {'Content-Type': 'application/json'},
@@ -30,6 +43,7 @@ const exampleGet = () => {
         });
     });
 }
+
 const delayedRequest = () => {
     const url = `${baseUrl}:12000/delay`;
     // get request has no body, only post sends information
@@ -42,7 +56,4 @@ const delayedRequest = () => {
     const result = asyncData();
     result.then(data => console.log(data));
 }
-
-const addSpam = (element) => {
-    element.addEventListener('click', () => {alert('rofl')})
-}
+// module.exports

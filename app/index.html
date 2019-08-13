@@ -3,12 +3,32 @@
     <meta charset='utf-8'>
     <title>Hello :D</title>
 </head>
-<script src="./js/init.js"></script>
-<body>
-    <h2>Debug webpage</h2>
-    <button onclick="addSpam(document)">Test add event listener</button>
-    <button onclick="examplePost()">Debug post req</button>
-    <button onclick="exampleGet()">Debug get req</button>
-    <button onclick="delayedRequest()">Debug delayed request</button>
-</body>
+<!-- Used for api calls-->
+<script src="./js/index.js"></script>
+<script>
+const random3Digits = () => {
+    
+    var string = ''
+    for(let i=0;i<3;i++) {
+        string += Math.floor(Math.random(100) * 10)
+    }
+    var element = document.getElementById('page-title')
+    element.innerText = string
+}
+</script>
+<!-- loading external stylesheet -->
+<link rel="stylesheet" href="./css/index.css">
+<body onload="random3Digits()">
+    <h2  id="page-title"></h2>
+    <!-- <img src='./img/gitachu.png'> -->
+    <div class="control-panel">
+        <button onclick="examplePost()">Debug post req</button>
+        <button onclick="exampleGet()">Debug get req</button>
+        <button onclick="delayedRequest()">Debug delayed request</button>
+        <button onclick="GETPYTHON()">GET req to python listener</button>
+    </div>
+    <div id="canvas-wrapper">
+        <canvas id="user-canvas"></canvas>
+    </div>
+    <script src="./js/canvas.js"></script>
 </html>

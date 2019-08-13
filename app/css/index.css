@@ -1,0 +1,15 @@
+#page-title {
+  text-align: center;
+}
+#user-canvas {
+  background-color: teal;
+  height: inherit;
+  width: 400px;
+}
+
+#canvas-wrapper {
+  height: 260px;
+  margin: 0px;
+  padding: 0px;
+  text-align: center;
+}

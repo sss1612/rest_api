@@ -34,8 +34,7 @@ api.get('/delay', (req, res, next) => {
   const spinOff = (time) => {
     const newDate = new Date();
     const newTime = newDate.getTime();
-    console.log('lol', newTime - time)
-    if (newTime - time < 3000) {
+    if (newTime - time < 1000) {
       setTimeout(spinOff, 100, time)
     }
     else {
@@ -43,5 +42,4 @@ api.get('/delay', (req, res, next) => {
     }
   }
   setTimeout(spinOff, 100, time)
-  
 });
